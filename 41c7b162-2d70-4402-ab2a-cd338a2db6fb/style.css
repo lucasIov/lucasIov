@@ -1,0 +1,225 @@
+/*
+this code is the view mode of the application
+  the editor function are not included in this file
+*/
+
+presentation {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	background-color: #000000;
+	color: #ffffff;
+	font-family: monospace;
+	font-size: 1.5em;
+	overflow: hidden;
+}
+
+presentation > img {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: auto;
+	top: 0;
+	margin-block: auto;
+	transition: all 1s cubic-bezier(.32,.99,.32,1);
+}
+
+slide {
+	visibility: hidden;
+	/* center xy */
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+slide.appear {
+	visibility: visible;
+	/* from down to up */
+	animation: slide-on 500ms cubic-bezier(.18,.89,.36,1.05);
+}
+
+slide.disappear {
+	/* from down to up */
+	animation: slide-off 500ms cubic-bezier(.18,.89,.36,1.05);
+}
+
+@keyframes slide-on {
+	0% {
+		transform: translate(-50%, 1000%);
+		opacity: 0;
+	}
+	100% {
+		transform: translate(-50%, -50%);
+		opacity: 1;
+	}
+}
+
+@keyframes slide-off {
+	0% {
+		transform: translate(-50%, -50%);
+		opacity: 1;
+	}
+	99% {
+		transform: translate(-50%, -1000%);
+		opacity: 0;
+		visibility: visible;
+	}
+	100% {
+		opacity: 0;
+		visibility: hidden;
+	}
+}
+
+slide > h1 {
+	display: block;
+	margin: 0;
+	font-size: 2em;
+	font-weight: bold;
+	text-align: center;
+	overflow: hidden;
+}
+
+slide > h2 {
+	display: block;
+	margin: 0;
+	font-size: 1.5em;
+	font-weight: bold;
+	text-align: center;
+	overflow: hidden;
+}
+
+slide hr {
+	display: block;
+	margin: 0;
+	border: 0;
+	overflow: hidden;
+}
+
+slide hr:after {
+	content: "";
+	display: block;
+	width: 80%;
+	height: 1px;
+	background-color: #ffffff;
+	animation: hrAnim 2.5s infinite;
+}
+
+@keyframes hrAnim {
+	0% {
+		transform: translateX(-100%);
+	}
+	100% {
+		transform: translateX(130%);
+	}
+}
+
+slide p {
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+
+slide img {
+	border-radius: 10px;
+}
+
+slide.appear img {
+	animation: imgOn 750ms linear;
+}
+
+slide.disappear img {
+	animation: imgOff 250ms linear;
+}
+
+slide galrie {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 5px;
+	overflow: hidden;
+	border-radius: 20px;
+}
+
+slide galrie img {
+	flex: 1;
+}
+
+@keyframes imgOn {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+
+@keyframes imgOff {
+	from { opacity: 1; }
+	to { opacity: 0; }
+}
+
+slide grid {
+	display: grid;
+	grid-template: 1fr 1fr / 1fr 1fr;
+	grid-template-areas:
+		"a b"
+		"c d";
+	gap: 5px;
+	overflow: hidden;
+	border-radius: 20px;
+}
+
+slide grid.template1 {
+	grid-template: 1fr 1fr / 1fr 1fr;
+	grid-template-areas:
+		"a c"
+		"b c";
+}
+
+slide grid.template2 {
+	grid-template: 1fr 1fr / 1fr 1fr;
+	grid-template-areas:
+		"a b"
+		"c c";
+}
+
+slide grid.template3 {
+	grid-template: 1fr 1fr / 1fr 1fr;
+	grid-template-areas:
+		"a a"
+		"b c";
+}
+
+slide grid.template4 {
+	grid-template: 1fr 1fr / 1fr;
+	grid-template-areas:
+		"a a"
+		"b b";
+}
+
+slide grid.template5 {
+	grid-template: 1fr / 1fr 1fr;
+	grid-template-areas:
+		"a b"
+		"a b";
+}
+
+slide grid > * {
+	overflow: hidden;
+	/* auto new line */
+	white-space: pre-wrap;
+}
+
+slide grid > *:nth-child(1) { grid-area: a; }
+slide grid > *:nth-child(2) { grid-area: b; }
+slide grid > *:nth-child(3) { grid-area: c; }
+slide grid > *:nth-child(4) { grid-area: d; }
+
+slide grid > img, slide grid > video {
+	width: 100%;
+	/* center xy */
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
