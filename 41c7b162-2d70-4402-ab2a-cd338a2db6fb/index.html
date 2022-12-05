@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="./script.js"></script>
+		<link rel="stylesheet" href="./style.css">
+	</head>
+	<body>
+		<Presentation loop next="Space; ArrowRight; ArrowDown; click" prev="ArrowLeft; ArrowUp;">
+			<img animate src="./ressource/fond.jpg">
+			<Slide>
+				<h1>une intime conviction</h1>
+				<hr>
+				<p>
+					réalisé par Antoine Raimbault, sorti en 2019.
+				</p>
+			</Slide>
+			<Slide>
+				<grid>
+					<span>Nora, Marina Foïs</span>
+					<span><img src="ressource/Nora.jpg"></span>
+
+					<span>Jacques Viguier, Laurent Lucas</span>
+					<span><img src="ressource/Viguier.jpg"></span>
+
+					<span>Éric Dupond-Moretti, Olivier Gourmet</span>
+					<span><img src="ressource/Maitre Dupont-Morettie.jpg"></span>
+
+					<span>Félix, Léo Labertrandie</span>
+					<span><img src="ressource/LEO.PNG"></span>
+				</grid>
+			</Slide>
+			<Slide>
+				<h1>travail de mineur</h1>
+				<h2>temps de travail</h2>
+				<br>
+				<img src="./ressource/horaire.png" style="width: 100%;">
+			</Slide>
+			<Slide>
+				<h1>son</h1>
+			</Slide>
+			<Slide>
+				<h1>source</h1>
+				<hr>
+				<p>
+					<line>générique de fin</line>
+					<line><a href="https://fr.wikipedia.org/wiki/Une_intime_conviction">wikipedia.org</a></line>
+					<line><a href="https://consignations.caissedesdepots.fr/particulier/recuperer-votre-argent-consigne/recuperez-vos-revenus-denfants-spectacle-ou-mannequinat">consignations.caissedesdepots.fr(Revenus d'ESM)</a></line>
+					<line><a href="https://www.actu-juridique.fr/divers/la-justice-au-cinema-et-le-cinema-devant-la-justice-le-miroir-a-deux-faces-lexemple-de-grace-a-dieu-et-dune-intime-conviction/">actu-juridique.fr (La justice au cinéma et le cinéma devant la justice)</a></line>
+					<line><a href="https://sfa-cgt.fr/sites/default/files/artistes%20interpr%C3%A8tes%20de%20moins%20de%2016%20ans.pdf">sfa-cgt.fr(artistes interprètes de moins de 16 ans)</a></line>
+					<line><a href="https://www.legifrance.gouv.fr/codes/id/LEGITEXT000006072050">legifrance.gouv.fr (code du travail)</a></line>
+					<line>Léo Labertrandie (Félix, fils de Nora)</line>
+				</p>
+			</Slide>
+			<!--
+				<galrie>
+					<img src="./ressource/last.png">
+					<img src="./ressource/last.png">
+					...
+				</galrie>
+				<grid class="template1">
+					<p>a</p>
+					<p>b</p>
+					<img src="./ressource/old.png">
+				</grid>
+			-->
+		</Presentation>
+	</body>
+	<style>
+.progressive { /* style for show the progressive text */
+	--r: 0s;
+	display: inline-block;
+	overflow: hidden;
+	white-space: nowrap;
+	vertical-align: bottom;
+	animation: progressive 1s steps(100, end) 0s 1 normal both;
+	animation-delay: var(--r);
+}
+
+@keyframes progressive {
+	from { width: 0; }
+	to { width: 100%; }
+}
+
+h1, h2 {
+	background-color: rgba(0, 0, 0, 0.45);
+	border-radius: 7px;
+	color: white;
+	padding-inline: 10px;
+}
+
+slide > hr {
+	width: 75%;
+	margin: 5px auto;
+}
+
+slide > p {
+	background-color: rgba(255, 255, 255, 0.8);
+	padding: 1em;
+	border-radius: 10px;
+	color: black;
+	font-weight: bold;
+}
+
+p > line {
+	display: block;
+}
+
+a {
+	color: black;
+	text-decoration: underline;
+}
+
+slide > grid {
+	height: 600px;
+	background-color: rgba(0, 0, 0, 0.45);
+	padding: 1em;
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	grid-template-rows: repeat(4, 1fr);
+}
+
+slide > grid img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+slide > grid > span {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	border-radius: 10px;
+}
+	</style>
+	<script>
+var pr = new Presentation(document.querySelector("Presentation"));
+	</script>
+</html>
