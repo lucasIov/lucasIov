@@ -7,6 +7,6 @@ hi'm Lucas a french dev
 
 find me on:
 - [linkedin](https://www.linkedin.com/in/lucas-iovine-/)
-- [youtube](https://www.youtube.com/@lucasiovine)
+- [youtube](https://www.youtube.com/@lucas.iovine)
 - [instagram](https://www.instagram.com/lucas.iovine/)
 - [twitch](https://www.twitch.tv/lucasiovine)
